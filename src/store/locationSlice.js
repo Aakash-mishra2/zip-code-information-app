@@ -10,7 +10,9 @@ export const userSlice = createSlice({
     initialState,
     reducers: {
         fetchDetails: (state, action) => {
-
         }
     }
 });
+
+export const {fetchDetails} = userSlice.actions;
+export default userSlice.reducer;
