@@ -9,7 +9,6 @@ import React from "react";
 
 const PlaceList = (props) => {
     const state = useSelector((state) => state.places);
-    console.log('State', state);
     const dispatch = useDispatch();
     if (state.isLoading && !state.isError) {
         return (
@@ -37,12 +36,11 @@ const PlaceList = (props) => {
     }
 
     return (
-        <React.Fragment>
+        <React.Fragment > 
             {state.data
                 && <h4 className="m-0 mb-0 pb-0 font-open text-xl"><em> This pincode is from </em> <b>{state.data.country}, {state.data['country abbreviation']}</b></h4>
             }
-            <div className="flex flex-wrap flex-row font-open justify-evenly mt-0 m-4 p-4 gap-2
-                            hover:scale-105 transform duration-1000 ">
+            <div className="flex flex-wrap flex-row font-open justify-evenly mt-0 m-4 p-4 gap-2 hover:scale-105 transform duration-1000 ">
 
                 {state.data
                     && state.data.places.map((e, index) =>
