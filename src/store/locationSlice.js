@@ -31,7 +31,6 @@ export const userSlice = createSlice({
             state.isLoading = true;
         });
         builder.addCase(fetchPlaces.rejected, (state,action) => {
-            console.log("Error", action.payload);
             state.isError = true;
         });
     }

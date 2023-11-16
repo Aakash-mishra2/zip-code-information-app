@@ -27,14 +27,14 @@ const Button = styled.button`
     color: white;
     height: 50px;
     padding: 10px;
+    align-items: center;
     width: fit-content;
 `;
 const HomePage = () => {
     const dispatch = useDispatch();
-    // const [show, setShow] = useState(false);
     const [zipCode, setZipCode] = useState('');
     return (
-        <div className="flex flex-row m-4 p-2 gap-4 items-center justify-center">
+        <div className="flex flex-col sm:flex-row m-4 p-2 gap-4 items-center justify-center">
             <h2 className="text-xl font-pop font-medium"> Enter Your Zip Code: </h2>
             <Input
                 type="text"
@@ -43,7 +43,9 @@ const HomePage = () => {
                 value={zipCode}
                 autoComplete="off"
             />
-            <Button onClick={() => dispatch(fetchPlaces(zipCode))}>Go</Button>
+            <Button onClick={() => 
+            dispatch(fetchPlaces(zipCode))
+            }> Go </Button>
             <Button onClick={() => {
                 setZipCode('');
                 dispatch(clearAll());
