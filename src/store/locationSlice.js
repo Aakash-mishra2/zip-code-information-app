@@ -25,6 +25,7 @@ export const userSlice = createSlice({
     extraReducers : (builder) => {
         builder.addCase(fetchPlaces.fulfilled, (state, action) => {
             state.isLoading = false;
+            state.isError = false;
             state.data = action.payload;
         });
         builder.addCase(fetchPlaces.pending, (state, action) => {

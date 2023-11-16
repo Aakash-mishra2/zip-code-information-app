@@ -43,13 +43,17 @@ const HomePage = () => {
                 value={zipCode}
                 autoComplete="off"
             />
-            <Button onClick={() => 
-            dispatch(fetchPlaces(zipCode))
-            }> Go </Button>
-            <Button onClick={() => {
-                setZipCode('');
-                dispatch(clearAll());
-            }}> Clear </Button>
+            <Button
+                className="hover:bg-[#04364A]/80 duration-500 font-pop "
+                onClick={() =>
+                    dispatch(fetchPlaces(zipCode))
+                }> Go </Button>
+            <Button
+                className="hover:bg-[#04364A]/80 duration-500 font-pop"
+                onClick={() => {
+                    setZipCode('');
+                    dispatch(clearAll());
+                }}> Clear </Button>
             <br />
         </div>
     )
