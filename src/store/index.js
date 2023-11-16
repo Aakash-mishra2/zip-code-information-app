@@ -1,7 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import userReducer from "./locationSlice";
+import placeReducer from "./locationSlice";
 export const store = configureStore({
     reducer: {
-        userAccount: userReducer,
-    }
+        places: placeReducer,
+    },
+    middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 });
