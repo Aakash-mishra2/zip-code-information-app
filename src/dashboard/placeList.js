@@ -39,14 +39,16 @@ const PlaceList = (props) => {
     return (
         <React.Fragment>
             {state.data
-                && <h4 className="m-0 mb-0 pb-0 font-open text-xl"><em> Your code is from </em> <b>{state.data.country}, {state.data['country abbreviation']}</b></h4>
+                && <h4 className="m-0 mb-0 pb-0 font-open text-xl"><em> This pincode is from </em> <b>{state.data.country}, {state.data['country abbreviation']}</b></h4>
             }
-            <div className="flex flex-wrap flex-row font-open justify-evenly mt-0 m-4 p-4 gap-2">
+            <div className="flex flex-wrap flex-row font-open justify-evenly mt-0 m-4 p-4 gap-2
+                            hover:scale-105 transform duration-1000 ">
 
                 {state.data
                     && state.data.places.map((e, index) =>
                     (
-                        <div className="tracking-wide flex flex-col bg-white shadow-xl m-2 p-4 rounded-lg max-h-fit max-w-fit">
+                        <div className="tracking-wide flex flex-col bg-white shadow-xl m-2 p-4 rounded-lg max-h-fit max-w-fit
+                                         hover:bg-gray-200 hover:scale-110 duration-1000">
                             <h1 className="text-lg"><b>{e['place name']}</b></h1>
                             <h5><em>{e.state}</em></h5>
                         </div>

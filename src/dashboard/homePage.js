@@ -34,7 +34,7 @@ const HomePage = () => {
     const dispatch = useDispatch();
     const [zipCode, setZipCode] = useState('');
     return (
-        <div className="flex flex-col sm:flex-row m-4 p-2 gap-4 items-center justify-center">
+        <div className="flex flex-col sm:flex-row sm:pb-0 m-4 p-2 gap-4 items-center justify-center">
             <h2 className="text-xl font-pop font-medium"> Enter Your Zip Code: </h2>
             <Input
                 type="text"
@@ -44,12 +44,12 @@ const HomePage = () => {
                 autoComplete="off"
             />
             <Button
-                className="hover:bg-[#04364A]/80 duration-500 font-pop "
+                className="hover:bg-[#04364A]/80 hover:scale-110 transform duration-500 font-pop "
                 onClick={() =>
                     dispatch(fetchPlaces(zipCode))
                 }> Go </Button>
             <Button
-                className="hover:bg-[#04364A]/80 duration-500 font-pop"
+                className="hover:bg-[#04364A]/80 hover:scale-110 transform duration-500 font-pop"
                 onClick={() => {
                     setZipCode('');
                     dispatch(clearAll());
