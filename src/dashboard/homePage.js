@@ -6,7 +6,7 @@ import { useState } from "react";
 const Input = styled.input`
 border: 1px solid #213555;
 background-color: rgba(252, 252, 252, 0.2);
-width: 250px;
+width: 180px;
 height: 50px;
 border-radius: 3px;
 font-family: "Source Sans Pro", sans-serif;
@@ -39,15 +39,16 @@ const HomePage = () => {
     }
     return (
         <div className="flex flex-row m-4 p-2 gap-4 items-center justify-center">
+            <h2 className="text-xl font-pop font-medium"> Enter Your Zip Code: </h2>
             <Input 
                 type="text"
                 name="zipCode"
-                placeholder="Enter Zip code here"
                 onChange={(event) => setZipCode(event.target.value)} 
                 value={zipCode} 
                 autoComplete="off"
                 />
             <Button onClick={handleClick}>Go</Button>
+            <br />
         </div>
     )
 }
