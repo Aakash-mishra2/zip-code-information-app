@@ -38,10 +38,11 @@ const HomePage = () => {
             <h2 className="text-xl font-pop font-medium"> Enter Your Zip Code: </h2>
             <Input
                 type="text"
-                name="zipCode"
-                onChange={(event) => setZipCode(event.target.value)}
-                value={zipCode}
                 autoComplete="off"
+                name="zipCode"
+                value={zipCode}
+                placeholder="Max 10 digits"
+                onChange={(event) => setZipCode(event.target.value)}
             />
             <Button
                 className="hover:bg-[#04364A]/80 hover:scale-110 transform duration-500 font-pop "

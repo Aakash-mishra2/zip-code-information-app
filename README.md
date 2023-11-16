@@ -1,6 +1,34 @@
-# Getting Started with Create React App
+# Zip Code Information App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React application that allows users to enter a postal code and fetch
+information about that location using the https://api.zippopotam.us API.
+
+```
+📦src
+ ┣ 📂store          //redux store and reducers
+ ┃ ┣ 📜index        
+ ┃ ┗ 📜locationSlice    //all actions for fetching and rendering 
+ ┣ 📂api
+ ┃ ┗ 📜base     // axios base url api 
+ ┣ 📂dashboard
+ ┃ ┣ 📜homePage     // Component for Entering Postal Code 
+ ┃ ┣ 📜placeList    // Component for displaying locations information
+ ┃ ┗ 📜mainHeader   // Title Bar 
+ ┣ 📂assets
+ ┃ ┗ 📜icon //Logo 
+ ┣ 📜App.css
+ ┣ 📜index.css
+ ┣ 📜App.js     //base component 
+ ┣ 📜index.js   // top of component tree - store and provider
+```
+## TechStack
+React, Javascript, Redux state management, HTML, CSS
+Libraries: Styled-components, Material UI, TailwindCSS
+External API: https://api.zippopotam.us/in/<User Input Code>
+
+## Author
+- [Aakash Mishra](https://portfolio-aakash28.netlify.app/)
+- [My Github ](https://github.com/Aakash-mishra2)
 
 ## Available Scripts
 
