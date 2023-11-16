@@ -1,15 +1,16 @@
 import styled from "styled-components";
-import { fetchDetails } from "../store/locationSlice";
+import { fetchPlaces } from "../store/locationSlice";
 import { useDispatch } from 'react-redux'
 import { useState } from "react";
+
 const Input = styled.input`
 border: 1px solid #213555;
 background-color: rgba(252, 252, 252, 0.2);
 width: 250px;
+height: 50px;
 border-radius: 3px;
 font-family: "Source Sans Pro", sans-serif;
 padding: 10px 15px;
-margin: 0 auto 10px auto;
 display: block;
 text-align: center;
 font-size: 18px;
@@ -21,7 +22,6 @@ const Button = styled.button`
   letter-spacing: 2px;
     box-shadow: 4px 3px 7px 2px #00000040;
     border-radius: 25px;
-    margin: 1rem 0.7rem;
     font-size: 19px;
     background-color: #04364A;
     color: white;
@@ -30,15 +30,24 @@ const Button = styled.button`
 `;
 const HomePage = () => {
     const dispatch = useDispatch();
+    // const [show, setShow] = useState(false);
     const [zipCode, setZipCode] = useState('');
-
+    const handleClick = (event) => {
+       event.preventDefault();
+       dispatch(fetchPlaces(zipCode));
+       //setShow(p => !p);
+    }
     return (
-        <div>
+        <div className="flex flex-row m-4 p-2 gap-4 items-center justify-center">
             <Input 
+                type="text"
+                name="zipCode"
+                placeholder="Enter Zip code here"
                 onChange={(event) => setZipCode(event.target.value)} 
                 value={zipCode} 
+                autoComplete="off"
                 />
-            <Button onClick={() => dispatch(fetchDetails(zipCode))}>Go</Button>
+            <Button onClick={handleClick}>Go</Button>
         </div>
     )
 }
