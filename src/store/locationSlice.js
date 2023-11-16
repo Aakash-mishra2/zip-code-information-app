@@ -15,6 +15,13 @@ const initialState = {
 export const userSlice = createSlice({
     name: "places",
     initialState,
+    reducers: {
+        clearAll: (state) => {
+            state.isLoading = false;
+            state.isError = false;
+            state.data = null;
+        }
+    },
     extraReducers : (builder) => {
         builder.addCase(fetchPlaces.fulfilled, (state, action) => {
             state.isLoading = false;
@@ -29,5 +36,5 @@ export const userSlice = createSlice({
         });
     }
 });
-
+export const { clearAll } = userSlice.actions;
 export default userSlice.reducer;

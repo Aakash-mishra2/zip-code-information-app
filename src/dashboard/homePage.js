@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { fetchPlaces } from "../store/locationSlice";
+import { fetchPlaces, clearAll } from "../store/locationSlice";
 import { useDispatch } from 'react-redux'
 import { useState } from "react";
 
@@ -26,28 +26,28 @@ const Button = styled.button`
     background-color: #04364A;
     color: white;
     height: 50px;
-    width: 50px;
+    padding: 10px;
+    width: fit-content;
 `;
 const HomePage = () => {
     const dispatch = useDispatch();
     // const [show, setShow] = useState(false);
     const [zipCode, setZipCode] = useState('');
-    const handleClick = (event) => {
-       event.preventDefault();
-       dispatch(fetchPlaces(zipCode));
-       //setShow(p => !p);
-    }
     return (
         <div className="flex flex-row m-4 p-2 gap-4 items-center justify-center">
             <h2 className="text-xl font-pop font-medium"> Enter Your Zip Code: </h2>
-            <Input 
+            <Input
                 type="text"
                 name="zipCode"
-                onChange={(event) => setZipCode(event.target.value)} 
-                value={zipCode} 
+                onChange={(event) => setZipCode(event.target.value)}
+                value={zipCode}
                 autoComplete="off"
-                />
-            <Button onClick={handleClick}>Go</Button>
+            />
+            <Button onClick={() => dispatch(fetchPlaces(zipCode))}>Go</Button>
+            <Button onClick={() => {
+                setZipCode('');
+                dispatch(clearAll());
+            }}> Clear </Button>
             <br />
         </div>
     )
