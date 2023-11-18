@@ -16,6 +16,9 @@ information about that location using the https://api.zippopotam.us API.
  ┃ ┗ 📜mainHeader   // Title Bar 
  ┣ 📂assets
  ┃ ┗ 📜icon //Logo 
+ ┣ 📂shared
+ ┃ ┣ 📜input    //custom input component with input validation and error handling
+ ┃ ┣ 📜validators // multiple validators logic function for inputs
  ┣ 📜App.css
  ┣ 📜index.css
  ┣ 📜App.js     //base component 
